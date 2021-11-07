@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49f8ddbd034fb934fa3582d31588241f, type: 3}
+  m_Name: FoodObjects
+  m_EditorClassIdentifier: 
+  Description: 'The list of all ingredients and its
+
+    index'
+  clearInOnEnable: 0
+  Items:
+  - {fileID: 1159813679787783967, guid: 1e9b95c8f634b93488f46fb2e97571d1, type: 3}
+  - {fileID: 4626539060482403799, guid: 53a768f586598a84bb8b01d32751974a, type: 3}
+  - {fileID: 3369428252647332149, guid: 57a1f578cba3b94488658fcb5d8139da, type: 3}
+  - {fileID: 4920300765632008562, guid: 740734e9797aa4945829725528e00976, type: 3}
+  - {fileID: 6795682532889869717, guid: e5d7575cdbb977544b0ca76b5941647b, type: 3}
+  - {fileID: 6363182067955467361, guid: b11b215f62a07994c8e52bfd389db656, type: 3}
+  - {fileID: 4035466001769727524, guid: ec608db11d112084aa260bc62a01bcd6, type: 3}
+  - {fileID: 1447226748226112691, guid: dd623bb34bf400f44b71bc20c846dd2b, type: 3}
+  - {fileID: 8316681463715261513, guid: 9fd94a69ed59ddd46b9305895bd2a553, type: 3}
+  - {fileID: 7978980635873828802, guid: 2b7c4cb7f5699074aa0ce4d0f137081f, type: 3}
+  - {fileID: 9106094609920810733, guid: a35734946fe504849ab1dcc711b432d2, type: 3}

@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Grill
+  - Packet
+  - Ignore trigger
+  - Food base
+  - Plate
+  - Food top
+  - NPC
+  - Dead zone
+  - Destination
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Ground
+  - Dinamic
+  - Post proccessing
+  - Player
+  - Ignore light
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: canvas
+    uniqueID: 1960067743
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0

@@ -21,9 +21,10 @@ namespace Food
         private void Awake()
         {
             thisObjectAtributtes = GetComponent<FoodAtributes>();
+            InvokeRepeating(nameof(Updating), 0, 0.1f);
         }
 
-        private void Update()
+        private void Updating()
         {
             if (this.transform.parent == null)
             {

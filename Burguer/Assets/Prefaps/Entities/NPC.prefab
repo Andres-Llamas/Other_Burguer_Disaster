@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 2456007627035852550}
   - component: {fileID: 2456007627035852549}
   - component: {fileID: 3083250198401032251}
-  - component: {fileID: 8630984862272337253}
+  - component: {fileID: 3300987734356987128}
   - component: {fileID: 2259894011774685549}
   - component: {fileID: 2456007627035852568}
   - component: {fileID: 2826522632774048940}
@@ -102,7 +102,7 @@ MonoBehaviour:
   upperBound: {fileID: 6184030441532555345}
   middleBound: {fileID: 2079095455}
   ingredietsGlobalList: {fileID: 11400000, guid: 210f8f97bd832ad4886067480000064f, type: 2}
---- !u!114 &8630984862272337253
+--- !u!114 &3300987734356987128
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,7 +114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f218d54ab160d64591af7fffaa34085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrivedToDestination: 0
 --- !u!195 &2259894011774685549
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -656,7 +655,7 @@ GameObject:
   - component: {fileID: 6273072340807099009}
   - component: {fileID: 6273072340807099008}
   - component: {fileID: 6273072340807099011}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Place to leave food
   m_TagString: Untagged
   m_Icon: {fileID: 0}

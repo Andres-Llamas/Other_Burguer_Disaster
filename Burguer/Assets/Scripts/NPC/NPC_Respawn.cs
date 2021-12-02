@@ -1,66 +1,69 @@
+using SO.Variables;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using NaughtyAttributes;
 
 namespace Entities.NPC
 {
     public class NPC_Respawn : MonoBehaviour
     {
-        #region Inspector variables ---------------------------------------------------
-        public List<Transform> respawnPoints;
-        public GameObject npc_Prefap;
-        public SO.Variables.SO_IntVariable numberOfTotal_NPC;
-        public bool randomSpawn = true;
+        #region Inspector variables ---------------------------------------------------	
+        [SerializeField] GameObject _npcPrefap;
+        [Header("Probability options")]
+        [SerializeField] int _maxTimeBetweenSpawns;
+        [SerializeField] bool _startOnAwake = true;
+        [SerializeField] SO_IntVariable _npcOnScene;
+        [SerializeField] int _maxNumberOfNPCOnScreen = 15;        
         #endregion
 
         #region NO_Inspector variables ------------------------------------------------
+        List<Transform> _spawnPoints = new List<Transform>();
         #endregion
 
         #region methods ---------------------------------------------------------------
         private void Awake()
         {
-            foreach (Transform i in this.transform)
+            foreach (Transform child in this.transform)
             {
-                respawnPoints.Add(i);
+                _spawnPoints.Add(child);
             }
         }
 
         private void Start()
         {
-            if (randomSpawn)
-            {
-                StartCoroutine(nameof(SpawnAtRandomTimes));
-            }
+            if (_startOnAwake) StartCoroutine(nameof(SpawnRandomly));
         }
 
-		[Button]
+        IEnumerator SpawnRandomly()
+        {
+            int probab = Random.Range(1, _maxTimeBetweenSpawns);
+            yield return new WaitForSeconds(probab);            
+            InstantiateNPC();
+            StartCoroutine(nameof(SpawnRandomly));
+        }
+
+        void InstantiateNPC()
+        {
+            if(_npcOnScene.currentValue < _maxNumberOfNPCOnScreen)
+                Instantiate(_npcPrefap, _spawnPoints[Random.Range(0, _spawnPoints.Count)].position, Quaternion.identity);
+        }
+
+        [Button]
         public void StartSpawning()
         {
-            StartCoroutine(nameof(SpawnAtRandomTimes));
+            StartCoroutine(nameof(SpawnRandomly));
         }
-		[Button]
-		public void StopSpawning()
-		{
-
-		}
-
-        IEnumerator SpawnAtRandomTimes()
+        [Button]
+        public void StopSpawning()
         {
-            int time = Random.Range(0, 10);
-            yield return new WaitForSeconds(time);
-            if (numberOfTotal_NPC.currentValue < 15)
-                RespawnNPC();
-            StartCoroutine(nameof(SpawnAtRandomTimes));
+            StopCoroutine(nameof(SpawnRandomly));
         }
-
-        [NaughtyAttributes.Button]
-        void RespawnNPC()
+        [Button]
+        public void SpawnNPC()
         {
-            numberOfTotal_NPC.ChangeCurrentValueBy(1);
-            int randomSpawnPoint = Random.Range(0, respawnPoints.Count);
-            Instantiate(npc_Prefap, respawnPoints[randomSpawnPoint].position, respawnPoints[randomSpawnPoint].rotation);
+            InstantiateNPC();
         }
-        #endregion
+        #endregion        
     }
 }

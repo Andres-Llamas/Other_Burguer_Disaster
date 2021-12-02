@@ -11,8 +11,9 @@ TagManager:
   - Plate
   - Food top
   - NPC
-  - Dead zone
   - Destination
+  - Destiny point
+  - Death zone
   layers:
   - Default
   - TransparentFX
@@ -25,9 +26,9 @@ TagManager:
   - Post proccessing
   - Player
   - Ignore light
-  - Mirror
-  - 
-  - 
+  - Ignore reflection prop
+  - Ignore light and reflection
+  - Ignore reflective surfice
   - 
   - 
   - 

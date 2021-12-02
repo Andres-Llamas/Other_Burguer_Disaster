@@ -36,6 +36,7 @@ namespace Food
             parenting = GetComponent<FoodParenting>();
             if (_renderer == null)
                 _renderer = GetComponentInChildren<MeshRenderer>();
+            InvokeRepeating(nameof(Updating), 0, 0.2f);
         }
 
         private void Start()
@@ -43,7 +44,7 @@ namespace Food
             if (modifyStartColor)
                 ChangeColor(originalColor);
         }
-        private void Update()
+        private void Updating()
         {
             if (colorTest)
                 ChangeColor(originalColor);
